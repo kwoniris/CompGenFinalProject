@@ -1,50 +1,78 @@
-# environment.yml
+# environment.yml for mac 
+
 name: pdac-scgpt
 channels:
   - conda-forge
   - bioconda
   - pytorch
+  - defaults
+
 dependencies:
   - python=3.9
-  - pip
-  - numpy=1.24.3
-  - pandas=2.0.3
-  - scipy=1.11.1
-  - matplotlib=3.7.1
-  - seaborn=0.12.2
-  - scikit-learn=1.3.0
+  
+  # Core scientific computing
+  - numpy>=1.21.0
+  - pandas>=1.3.0
+  - scipy>=1.7.0
+  - matplotlib>=3.4.0
+  - seaborn>=0.11.0
+  
+  # PyTorch for Mac (MPS support)
+  - pytorch::pytorch>=2.0.0
+  - pytorch::torchaudio
+  - pytorch::torchvision
+  
+  # Single-cell analysis
+  - scanpy>=1.9.0
+  - anndata>=0.8.0
+  - scvi-tools
+  - scrublet
+  
+  # Bioinformatics
+  - bioconda::pybedtools
+  - bioconda::pysam
+  
+  # Jupyter and development
   - jupyter
-  - notebook
+  - jupyterlab
   - ipykernel
-  - git
+  - notebook
   
-  # scRNA-seq core packages
-  - scanpy=1.9.3
-  - anndata=0.9.2
-  - leidenalg=0.10.1
-  - python-igraph=0.10.4
+  # Additional scientific packages
+  - scikit-learn>=1.0.0
+  - statsmodels
+  - networkx
+  - umap-learn
+  - leidenalg
+  - python-igraph
   
-  # Additional bioinformatics
-  - h5py=3.9.0
-  - tables=3.8.0
-  - openpyxl=3.1.2
+  # Data handling
+  - h5py
+  - tables
+  - openpyxl
+  - xlrd
   
-  # PyTorch (adjust CUDA version as needed)
-  - pytorch=2.0.1
-  - torchvision=0.15.2
-  - torchaudio=2.0.2
-  - pytorch-cuda=11.8
+  # Progress bars and utilities
+  - tqdm
+  - psutil
   
+  # Plotting
+  - plotly
+  - bokeh
+  
+  # Development tools
+  - black
+  - flake8
+  - pytest
+  
+  # pip packages that might not be available in conda
+  - pip
   - pip:
-    - harmonypy==0.0.9
-    - scvi-tools==1.0.2
-    - cellxgene-census
-    - scgpt  # Add specific version when available
-    - transformers==4.30.2
-    - datasets==2.13.1
-    - accelerate==0.20.3
-    - wandb==0.15.4
-    - tensorboard==2.13.0
-    - plotly==5.15.0
-    - umap-learn==0.5.3
-    - fa2==0.3.5
+    - scgpt
+    - harmonypy
+    - gseapy
+    - episcanpy
+    - palantir
+    - cellrank
+    - squidpy
+    - mudata
