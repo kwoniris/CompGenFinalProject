@@ -1,0 +1,101 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# Environments
+.venv
+
+# Genomics-specific files (common in computational genomics projects)
+*.h5ad
+*.fastq
+*.fastq.gz
+*.bam
+*.bai
+*.sam
+*.vcf
+*.vcf.gz
+*.bcf
+*.bed
+*.bed.gz
+*.gff
+*.gff3
+*.gtf
+*.fasta
+*.fasta.gz
+*.fa
+*.fa.gz
+*.fq
+*.fq.gz
+*.wig
+*.wig.gz
+*.bigwig
+*.bigbed
+*.narrowPeak
+*.broadPeak
+*.gappedPeak
+*.maf
+*.maf.gz
+*.phylip
+*.nexus
+*.tree
+*.newick
+*.aln
+*.msa
+*.pdb
+*.cif
+*.pdb.gz
+*.cif.gz
+
+# Large data directories
+data/
+raw_data/
+processed_data/
+
+# OS generated files
+.DS_Store
+.DS_Store?
