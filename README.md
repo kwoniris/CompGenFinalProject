@@ -116,29 +116,9 @@ How to read the outputs:
 - `cross_condition_degradation.png` — F1 drop from A to B per representation × model. Short bars = robust to shift, tall bars = collapse under shift. If scGPT bars are consistently shorter than PCA-50 and Raw-HVG across all three classifiers, RQ3 is supported.
 - `confusion_matrices/` — strong diagonals on the cross-condition matrices = better generalization.
 
-### Optional add-ons
+### Misc. Code
 
 - `scGPT_PDAC_classifier_v2.ipynb` — zero-shot scGPT cell-type classifier as a baseline reference.
 - `finetuning_colab.ipynb` — fine-tunes scGPT on this cohort. Designed to run on Google Colab with a GPU; download the resulting checkpoint locally before running the next notebook.
 - `Finetuned_scgpt_LR_MLP.ipynb` — re-runs the LR / MLP heads on the fine-tuned embeddings for comparison against the frozen-scGPT results from notebook 04.
 
----
-
-## Overall Narrative
-
-```
-Notebook 1   "Here is the biology"
-             14 cell types, 12 samples, clean annotations.
-
-Notebook 2   "Here are three ways to encode it mathematically"
-             scGPT, PCA-50, Raw-HVG all extracted and saved.
-
-Notebook 3   "Here is how cancer reshapes each cell type"
-             Shift rankings answer RQ1 and RQ2.
-             Ductal, Neutrophils, Fibroblasts most affected.
-             5 cell types lost or gained entirely.
-
-Notebook 4   "Here is whether foundation models handle that better"
-             Cross-condition F1 degradation answers RQ3.
-             If scGPT degrades less, the hypothesis is supported.
-```
