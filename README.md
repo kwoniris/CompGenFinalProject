@@ -1,10 +1,10 @@
-# CompGenFinalProject
+# From Cell State Shifts to Fine-Tuning: Evaluating scGPT Foundation Model Representations for Pancreatic Ductal Adenocarcinoma scRNA-seq Analysis
 
-Computational Genomics Final Project — comparing scGPT foundation-model embeddings against PCA and raw HVG representations for cell-type classification and condition-shift analysis on PDAC vs. matched adjacent (ADJ) tissue.
+Edgar Robitaille, Sidharth Raghavan, Iris Kwon
 
 The project answers three questions:
-- **RQ1 / RQ2**: Which cell types shift most between normal and tumor tissue, and do different embedding spaces agree on the ranking?
-- **RQ3**: Do scGPT embeddings produce classifiers that generalize better from normal to tumor tissue than classical representations?
+- (1) Which cell types shift most between normal and tumor tissue, and (2) do different embedding spaces agree on the ranking?
+- (3) Do scGPT embeddings produce classifiers that generalize better from normal to tumor tissue than classical representations?
 
 ---
 
@@ -97,7 +97,7 @@ How to read the outputs:
 ### 3. `03_ShiftAnalysis.ipynb`
 
 For each (cell type × representation), computes the centroid of ADJ cells and PDAC cells and measures their distance — this quantifies how much each cell type is reshaped under tumor conditions. Outputs:
-- `shift_ranking_barplot.png` — answers RQ1. Consistent ordering across the three panels means all representations agree on which cell types shift most. Ductal at the top is the expected biological result.
+- `shift_ranking_barplot.png` — Consistent ordering across the three panels means all representations agree on which cell types shift most. Ductal at the top is the expected biological result.
 - `shift_heatmap.png` — right panel (normalised) is the correct one for cross-representation comparison. Dark red across all three columns for the same cell type = a robust finding.
 - `shift_scatter_scgpt_vs_pca.png` — points above the diagonal mean scGPT detected a larger shift than PCA. High Pearson r validates that the two representations capture the same biology.
 - `umap_shift_vectors.png` — arrow length = shift magnitude, direction = where a cell type moves in transcriptional space under tumor conditions.
